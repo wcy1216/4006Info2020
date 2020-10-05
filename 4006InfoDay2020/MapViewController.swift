@@ -25,6 +25,8 @@ class MapViewController: UIViewController {
             mapView.addAnnotation(b)
         }
         
+        mapView.showsUserLocation = true
+        
         // Do any additional setup after loading the view.
     }
     
