@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 
+
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -16,9 +17,14 @@ class MapViewController: UIViewController {
     let campusLocation = CLLocation(latitude: 22.33787, longitude: 114.18131)
     
     override func viewDidLoad() {
+        super.viewDidLoad()
 
         mapView.setCenterLocation(campusLocation)
 
+        for b in Building.campusBuildings {
+            mapView.addAnnotation(b)
+        }
+        
         // Do any additional setup after loading the view.
     }
     
