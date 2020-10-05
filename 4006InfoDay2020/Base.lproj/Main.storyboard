@@ -27,18 +27,42 @@
         <!--Item 1-->
         <scene sceneID="cg3-eZ-tQe">
             <objects>
-                <viewController id="awt-Y7-Fi3" sceneMemberID="viewController">
+                <viewController id="awt-Y7-Fi3" customClass="MapViewController" customModule="_006InfoDay2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9dd-dA-9Zo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yAO-3H-Mn7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfH-Ik-ULD">
+                                <rect key="frame" x="163" y="757" width="89" height="56"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="resetPosition:" destination="awt-Y7-Fi3" eventType="touchUpInside" id="TlO-bW-ScP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bMX-nP-aXG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yAO-3H-Mn7" firstAttribute="leading" secondItem="bMX-nP-aXG" secondAttribute="leading" id="CGy-EB-Rg8"/>
+                            <constraint firstItem="yAO-3H-Mn7" firstAttribute="centerX" secondItem="lfH-Ik-ULD" secondAttribute="centerX" id="Eu9-FS-wg4"/>
+                            <constraint firstItem="lfH-Ik-ULD" firstAttribute="leading" secondItem="bMX-nP-aXG" secondAttribute="leading" constant="163" id="IOA-Ds-oMv"/>
+                            <constraint firstItem="yAO-3H-Mn7" firstAttribute="top" secondItem="9dd-dA-9Zo" secondAttribute="topMargin" constant="-44" id="T71-3U-k6r"/>
+                            <constraint firstItem="yAO-3H-Mn7" firstAttribute="bottom" secondItem="bMX-nP-aXG" secondAttribute="bottom" id="Xyh-y5-Bav"/>
+                            <constraint firstItem="yAO-3H-Mn7" firstAttribute="centerX" secondItem="9dd-dA-9Zo" secondAttribute="centerX" id="gnd-GR-47v"/>
+                            <constraint firstItem="yAO-3H-Mn7" firstAttribute="bottom" secondItem="lfH-Ik-ULD" secondAttribute="bottom" id="ytj-81-akK"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="lTI-7t-xAh"/>
+                    <connections>
+                        <outlet property="mapView" destination="yAO-3H-Mn7" id="hG9-ML-asT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHE-oD-qmN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-309" y="-517"/>
+            <point key="canvasLocation" x="-310.14492753623193" y="-522.32142857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="b0Y-q5-pnb">
