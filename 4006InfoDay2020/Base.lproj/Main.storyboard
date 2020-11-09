@@ -310,6 +310,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="DlU-YU-Kvk" kind="relationship" relationship="viewControllers" id="8Qp-iV-djS"/>
+                        <segue destination="hbr-cy-OKe" kind="relationship" relationship="viewControllers" id="HAa-hQ-ygi"/>
                         <segue destination="awt-Y7-Fi3" kind="relationship" relationship="viewControllers" id="lnu-7M-80C"/>
                         <segue destination="8ra-Qc-ION" kind="relationship" relationship="viewControllers" id="Iku-Mz-BmX"/>
                     </connections>
@@ -317,6 +318,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuC-Ab-prg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1128" y="-196"/>
+        </scene>
+        <!--Itin-->
+        <scene sceneID="zao-no-CEJ">
+            <objects>
+                <tableViewController title="Itin" id="hbr-cy-OKe" customClass="ItinTableViewController" customModule="_006InfoDay2020" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="B61-ub-nPc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItinCell" textLabel="MBp-K9-dK9" style="IBUITableViewCellStyleDefault" id="dxQ-zU-zQ5">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dxQ-zU-zQ5" id="S5w-hY-cp7">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MBp-K9-dK9">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hbr-cy-OKe" id="HLo-nA-G0u"/>
+                            <outlet property="delegate" destination="hbr-cy-OKe" id="HLj-Fi-Zm0"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Itin" image="a.book.closed.fill" catalog="system" id="MoA-tn-CZd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="znZ-uZ-qZS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2000" y="556"/>
         </scene>
         <!--Dept-->
         <scene sceneID="Abt-Ue-ec6">
@@ -339,6 +378,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="a.book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="book" catalog="system" width="128" height="102"/>
         <image name="case" catalog="system" width="128" height="98"/>
         <image name="hkbu_logo.svg" width="1200" height="1200"/>

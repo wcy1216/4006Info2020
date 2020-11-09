@@ -1,5 +1,5 @@
 //
-//  EventTableViewController.swift
+//  ItinTableViewController.swift
 //  4006InfoDay2020
 //
 //  Created by 17214726 on 9/11/2020.
@@ -7,24 +7,35 @@
 
 import UIKit
 
-class EventTableViewController: UITableViewController {
-
-    var code:String?
-    var deptEvents: [Event] = []
-
+class ItinTableViewController: UITableViewController {
     
+    var savedEvents:[Event]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:  #selector(reloadItin), for: UIControl.Event.valueChanged)
 
-        if let unwrappedCode = code {
-            self.title = unwrappedCode
-        }
+        self.refreshControl = refreshControl
+        
+        NotificationCenter.default
+                .addObserver(self, selector: #selector(reloadItin), name: Event.didSaveNotification, object: nil)
+        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    @objc func reloadItin() {
+            
+        self.tableView.reloadData()
+        
+        refreshControl?.endRefreshing()
+    }
+
 
     // MARK: - Table view data source
 
@@ -35,63 +46,24 @@ class EventTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        deptEvents = Event.sampleData.filter { $0.dept_id == code }
+        savedEvents = Event.sampleData.filter {$0.saved == true}
+        
+        if let events = savedEvents{
+            return events.count
+        }else{
+            return 0
             
-            return deptEvents.count
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItinCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = deptEvents[indexPath.row].title
 
+        cell.textLabel?.text = savedEvents?[ indexPath.row].title
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView,
-                            trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let saveAction = self.contextualSaveAction(forRowAtIndexPath: indexPath)
-        let swipeConfig = UISwipeActionsConfiguration(actions: [saveAction])
-
-        return swipeConfig
-    }
-    
-    func contextualSaveAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
-        
-        let action = UIContextualAction(style: .normal, title: "Save") {
-            (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
-            
-            print("Saving")
-            
-            let id = self.deptEvents[indexPath.row].id
-            
-            if let index = Event.sampleData.firstIndex(where: {$0.id == id}) {
-                Event.sampleData[index].saved = true
-                
-                NotificationCenter.default.post(name: Event.didSaveNotification, object: nil)
-
-                let alert = UIAlertController(
-                    title: "Event saved to Itinerary!",
-                    message: "All saved events are available in the itinerary tab.",
-                    preferredStyle: .alert
-                )
-
-                alert.addAction(
-                    UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                        print("OK button pressed!")
-                    })
-                )
-
-                self.present(alert, animated: true, completion: nil)
-            }
-            
-            completionHandler(true)
-        }
-        
-        return action
     }
     
 
