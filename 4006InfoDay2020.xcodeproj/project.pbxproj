@@ -17,6 +17,11 @@
 		630F3A32252AC40A000E8CC7 /* _006InfoDay2020UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F3A31252AC40A000E8CC7 /* _006InfoDay2020UITests.swift */; };
 		630F3A46252AC831000E8CC7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F3A45252AC831000E8CC7 /* MapViewController.swift */; };
 		630F3A4B252ACDD1000E8CC7 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F3A4A252ACDD1000E8CC7 /* Building.swift */; };
+		632A695B2559306500201AA2 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A695A2559306500201AA2 /* InfoTableViewController.swift */; };
+		632A69602559353100201AA2 /* Dept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A695F2559353100201AA2 /* Dept.swift */; };
+		632A69652559359700201AA2 /* DeptTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A69642559359700201AA2 /* DeptTableViewController.swift */; };
+		632A696A25593A3400201AA2 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A696925593A3400201AA2 /* EventTableViewController.swift */; };
+		632A696F25593B1500201AA2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A696E25593B1500201AA2 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		630F3A33252AC40A000E8CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		630F3A45252AC831000E8CC7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		630F3A4A252ACDD1000E8CC7 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		632A695A2559306500201AA2 /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
+		632A695F2559353100201AA2 /* Dept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dept.swift; sourceTree = "<group>"; };
+		632A69642559359700201AA2 /* DeptTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeptTableViewController.swift; sourceTree = "<group>"; };
+		632A696925593A3400201AA2 /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		632A696E25593B1500201AA2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +117,11 @@
 				630F3A11252AC408000E8CC7 /* SceneDelegate.swift */,
 				630F3A13252AC408000E8CC7 /* ViewController.swift */,
 				630F3A15252AC408000E8CC7 /* Main.storyboard */,
+				632A696E25593B1500201AA2 /* Event.swift */,
+				632A695F2559353100201AA2 /* Dept.swift */,
+				632A69642559359700201AA2 /* DeptTableViewController.swift */,
+				632A696925593A3400201AA2 /* EventTableViewController.swift */,
+				632A695A2559306500201AA2 /* InfoTableViewController.swift */,
 				630F3A18252AC409000E8CC7 /* Assets.xcassets */,
 				630F3A1A252AC409000E8CC7 /* LaunchScreen.storyboard */,
 				630F3A1D252AC409000E8CC7 /* Info.plist */,
@@ -264,9 +279,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632A69602559353100201AA2 /* Dept.swift in Sources */,
+				632A696A25593A3400201AA2 /* EventTableViewController.swift in Sources */,
 				630F3A14252AC408000E8CC7 /* ViewController.swift in Sources */,
 				630F3A10252AC408000E8CC7 /* AppDelegate.swift in Sources */,
+				632A696F25593B1500201AA2 /* Event.swift in Sources */,
 				630F3A4B252ACDD1000E8CC7 /* Building.swift in Sources */,
+				632A69652559359700201AA2 /* DeptTableViewController.swift in Sources */,
+				632A695B2559306500201AA2 /* InfoTableViewController.swift in Sources */,
 				630F3A12252AC408000E8CC7 /* SceneDelegate.swift in Sources */,
 				630F3A46252AC831000E8CC7 /* MapViewController.swift in Sources */,
 			);
